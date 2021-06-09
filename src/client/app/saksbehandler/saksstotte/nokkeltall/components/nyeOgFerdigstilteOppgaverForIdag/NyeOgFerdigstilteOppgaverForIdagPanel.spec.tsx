@@ -6,6 +6,8 @@ import moment from 'moment';
 
 import behandlingType from 'kodeverk/behandlingType';
 import * as useKodeverk from 'api/rest-api-hooks/src/global-data/useKodeverk';
+import { ytelseTyper } from 'avdelingsleder/nokkeltall/nokkeltallUtils';
+import fagsakYtelseType from 'kodeverk/fagsakYtelseType';
 import { NyeOgFerdigstilteOppgaverForIdagPanel, getNyeOgFerdigstilteForIDag } from './NyeOgFerdigstilteOppgaverForIdagPanel';
 import NyeOgFerdigstilteOppgaverForIdagGraf from './NyeOgFerdigstilteOppgaverForIdagGraf';
 
@@ -17,6 +19,10 @@ describe('<NyeOgFerdigstilteOppgaverForIdagPanel>', () => {
     }]));
 
     const nyeOgFerdigstilteOppgaver = [{
+      fagsakYtelseType: {
+        kode: fagsakYtelseType.OMSORGSPENGER,
+        navn: 'Omsorgspenger',
+      },
       behandlingType: {
         kode: behandlingType.FORSTEGANGSSOKNAD,
         navn: 'FORSTEGANGSSOKNAD',
