@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const path = require('path');
 const { merge } = require('webpack-merge');
@@ -9,7 +10,7 @@ const APP_DIR = path.resolve(ROOT_DIR, 'app');
 
 const config = {
   mode: 'development',
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval-cheap-module-source-map',
 
   entry: [
     'babel-polyfill',
@@ -20,7 +21,8 @@ const config = {
 
   output: {
     globalObject: 'this',
-    filename: '[name].js',
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[id].[chunkhash].chunk.js',
     path: ROOT_DIR,
     publicPath: '/',
   },
@@ -32,10 +34,13 @@ const config = {
       template: path.join(ROOT_DIR, 'index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style_[chunkhash].css',
+      ignoreOrder: true,
+    }),
   ],
 
   optimization: {
-    namedModules: true,
     splitChunks: {
       chunks: 'all',
     },

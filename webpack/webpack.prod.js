@@ -1,5 +1,6 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const { merge } = require('webpack-merge');
@@ -10,7 +11,7 @@ const APP_DIR = path.resolve(ROOT_DIR, 'app');
 
 const config = {
   mode: 'production',
-  devtool: 'source-maps',
+  devtool: 'source-map',
   performance: { hints: false },
 
   entry: [
@@ -20,8 +21,8 @@ const config = {
 
   output: {
     globalObject: 'this',
-    filename: '[name]-[contenthash].js',
-    chunkFilename: '[name].[contenthash].chunk.js',
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[id].[chunkhash].chunk.js',
     path: path.resolve(__dirname, '../dist/public'),
     publicPath: '/public/',
   },
@@ -31,6 +32,10 @@ const config = {
       filename: '../index.html',
       favicon: path.join(ROOT_DIR, 'favicon.ico'),
       template: path.join(ROOT_DIR, 'index.html'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'style_[chunkhash].css',
+      ignoreOrder: true,
     }),
   ],
 
