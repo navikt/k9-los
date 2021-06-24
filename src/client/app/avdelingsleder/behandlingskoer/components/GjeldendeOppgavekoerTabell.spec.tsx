@@ -8,7 +8,6 @@ import fagsakYtelseType from 'kodeverk/fagsakYtelseType';
 import Table from 'sharedComponents/Table';
 import TableRow from 'sharedComponents/TableRow';
 import TableColumn from 'sharedComponents/TableColumn';
-import { Knapp } from 'nav-frontend-knapper';
 import RestApiTestMocker from 'testHelpers/RestApiTestMocker';
 import kodeverkTyper from 'kodeverk/kodeverkTyper';
 import { K9LosApiKeys } from 'api/k9LosApi';
