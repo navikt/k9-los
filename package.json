@@ -123,7 +123,7 @@
     "babel-loader": "^8.1.0",
     "cache-loader": "^4.1.0",
     "chai": "^4.2.0",
-    "copy-webpack-plugin": "^7.0.0",
+    "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
     "enzyme": "^3.11.0",
