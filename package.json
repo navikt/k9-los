@@ -138,7 +138,7 @@
     "eslint-plugin-react": "^7.21.5",
     "file-loader": "^6.0.0",
     "happypack": "^5.0.1",
-    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-plugin": "^5.3.1",
     "ignore-styles": "^5.0.1",
     "istanbul-instrumenter-loader": "^3.0.1",
     "jsdom": "^16.4.0",
