@@ -21,7 +21,7 @@ const config = {
 
   output: {
     globalObject: 'this',
-    filename: '[name].[contenthash].js',
+    filename: '[name].[hash].js',
     chunkFilename: '[id].[chunkhash].chunk.js',
     path: path.resolve(__dirname, '../dist/public'),
     publicPath: '/public/',

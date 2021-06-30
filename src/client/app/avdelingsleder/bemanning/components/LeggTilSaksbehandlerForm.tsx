@@ -77,7 +77,7 @@ export const LeggTilSaksbehandlerForm: FunctionComponent<OwnProps & WrappedCompo
                   name="epost"
                   className={styles.epost}
                   label="Epost"
-                  bredde="L"
+                  bredde="l"
                   validate={[hasValidEmailFormat]}
                 />
               </FlexColumn>

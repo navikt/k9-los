@@ -21,7 +21,7 @@ const config = {
 
   output: {
     globalObject: 'this',
-    filename: '[name].[contenthash].js',
+    filename: '[name].[hash].js',
     chunkFilename: '[id].[chunkhash].chunk.js',
     path: ROOT_DIR,
     publicPath: '/',

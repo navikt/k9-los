@@ -39,6 +39,7 @@ const config = {
     'linebreak-style': OFF,
     'max-len': [ERROR, 160],
     'no-undef': OFF,
+    'no-shadow': OFF,
     'no-use-before-define': OFF,
     'react/require-default-props': OFF,
     'react/jsx-filename-extension': OFF,
@@ -51,6 +52,7 @@ const config = {
     '@typescript-eslint/ban-ts-comment': OFF,
     '@typescript-eslint/explicit-module-boundary-types': OFF,
     '@typescript-eslint/no-use-before-define': [ERROR],
+    '@typescript-eslint/no-shadow': [ERROR],
   },
 };
 
